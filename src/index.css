@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8B1E13;
+  --color-primary-hover: #74170e;
+  --color-secondary: #C89B3C;
+  --color-secondary-hover: #b28831;
+  --color-bg-warm: #FFFDF8;
+  --color-text-dark: #2D2D2D;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-warm);
+    color: var(--color-text-dark);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Smooth dropdown transition utilities */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+}
+.dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
